@@ -23,7 +23,7 @@ const App = () => {
         <AdoptedPetContext.Provider value={adoptedPet}>
           <QueryClientProvider client={queryClient}>
             <header>
-              <Link to="/">Adopt Me!</Link>
+              <Link to="/">PuppyFIle</Link>
             </header>
             <Routes>
               <Route path="/details/:id" element={<Details />} />

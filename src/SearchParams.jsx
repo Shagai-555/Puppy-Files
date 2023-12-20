@@ -39,12 +39,12 @@ const SearchParams = () => {
           </div>
         ) : null}
         <label htmlFor="location">
-          Location
-          <input id="location" name="location" placeholder="Location" />
+          Байршил
+          <input id="location" name="location" placeholder="Байршилааа оруулна уу" />
         </label>
 
         <label htmlFor="animal">
-          Animal
+          Амьтан
           <select
             id="animal"
             name="animal"
@@ -65,7 +65,7 @@ const SearchParams = () => {
         </label>
 
         <label htmlFor="breed">
-          Breed
+          Үүлдэр
           <select disabled={!breeds.length} id="breed" name="breed">
             <option />
             {breeds.map((breed) => (
@@ -76,7 +76,7 @@ const SearchParams = () => {
           </select>
         </label>
 
-        <button>Submit</button>
+        <button>Хайх</button>
       </form>
       <Results pets={pets} />
     </div>

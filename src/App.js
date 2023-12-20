@@ -11,7 +11,7 @@ const Pet = (props) => {
 
 const App = () => {
   return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Adopt Me!"),
+    React.createElement("h1", {}, "PuppyFile"),
     React.createElement(Pet, {
       name: "Luna",
       animal: "Dog",
@@ -22,7 +22,10 @@ const App = () => {
       animal: "Bird",
       breed: "Cockatiel",
     }),
-    React.createElement(Pet, { name: "Doink", animal: "Cat", breed: "Mix" }),
+    React.createElement(Pet, { 
+      name: "Doink", 
+      animal: "Cat", 
+      breed: "Mix" }),
   ]);
 };
 

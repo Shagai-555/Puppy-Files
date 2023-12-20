@@ -31,12 +31,12 @@ const Details = () => {
       <div>
         <h1>{pet.name}</h1>
         <h2>{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>
-        <button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>
+        <button onClick={() => setShowModal(true)}>{pet.name} Үрчлэх</button>
         <p>{pet.description}</p>
         {showModal ? (
           <Modal>
             <div>
-              <h1>Would you like to adopt {pet.name}?</h1>
+              <h1>Та {pet.name} үрчилж авахыг хүсч байна уу?</h1>
               <div className="buttons">
                 <button
                   onClick={() => {
@@ -44,9 +44,9 @@ const Details = () => {
                     navigate("/");
                   }}
                 >
-                  Yes
+                  Тийм
                 </button>
-                <button onClick={() => setShowModal(false)}>No</button>
+                <button onClick={() => setShowModal(false)}>Үгүй</button>
               </div>
             </div>
           </Modal>
