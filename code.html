@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #1dd1a1;
+            transition: all 0.5s linear;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+            width: 38rem;
+            padding: 5rem;
+            gap: 2rem;
+            box-shadow: 0 2.5rem 5rem #0000001a;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .login__text {
+            border-left: 1.5rem solid #1dd1a1;
+            padding-left: 1rem;
+            font-weight: 500;
+            line-height: 1em;
+            transition: all 0.5s linear;
+            color: #333;
+        }
+
+        .login__input input {
+            position: relative;
+            width: 90%;
+            padding: 1rem 1.5rem;
+            outline: none;
+            border: 0.2rem solid #555;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .login input.login__btn {
+            border: none;
+            color: #fff;
+            background-color: #1dd1a1;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .login__group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login__group a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .login__group a:last-child {
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .colors {
+            position: absolute;
+            right: 0;
+            padding: 1rem;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .colors span {
+            position: relative;
+            right: 0;
+            width: 2rem;
+            height: 2rem;
+            margin: 1rem;
+            background-color: var(--color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .colors__active {
+            border: 0.2rem solid #333;
+            scale: 1.5;
+            transition: 0.5s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="login">
+        <h2 class="login__text" id="login__text">
+            <a href="src/dist/index.html">Login</a>
+        </h2>
+        <div class="login__input">
+            <input type="text" placeholder="Username" />
+        </div>
+        <div class="login__input">
+            <input type="password" placeholder="Password" />
+        </div>
+        <div class="login__input">
+            <input type="submit" id="btn" value="Login" class="login__btn" />
+        </div>
+        <div class="login__group">
+            <a href="#">Forget Password</a>
+            <a href="#">Sign up</a>
+        </div>
+    </form>
+    <div class="colors">
+        <span id="colors_active" class="colors__active" onclick="changeColor('#1dd1a1')"
+            style="--color: #1dd1a1"></span>
+        <span onclick="changeColor('#ff6b6b')" style="--color: #ff6b6b"></span>
+        <span onclick="changeColor('#2e86de')" style="--color: #2e86de"></span>
+        <span onclick="changeColor('#f368e0')" style="--color: #f368e0"></span>
+        <span onclick="changeColor('#ff9f43')" style="--color: #ff9f43"></span>
+    </div>
+    <script>
+        let btn = document.getElementById("btn");
+        let text = document.getElementById("login__text");
+        function changeColor(color) {
+            document.body.style.background = color;
+            btn.style.background = color;
+            text.style.borderColor = color;
+
+            document.querySelectorAll("span").forEach(function (item) {
+                item.classList.remove("colors__active");
+            });
+            event.target.classList.add("colors__active");
+        }
+    </script>
+</body>
+
+</html>
